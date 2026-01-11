@@ -116,11 +116,23 @@
             color: var(--bg-dark);
             box-shadow: 0 0 15px var(--accent-glow);
         }
-        /* FORCE CHATBOT SIZE */
-        iframe#chatbase-bubble-window {
-            height: 500px !important; /* Adjust height here */
-            width: 350px !important;  /* Adjust width here */
-            max-height: 80vh !important; /* Prevents it from being too tall on mobile */
+        
+        /* Targets ANY iframe coming from Chatbase */
+        iframe[src*="chatbase.co"] {
+            height: 550px !important;  /* Force height to 550px */
+            width: 380px !important;   /* Force width to 380px */
+            max-height: 70vh !important; /* Never take more than 70% of screen height */
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5) !important;
+            border-radius: 12px !important;
+        }
+
+        /* On mobile, make it slightly smaller */
+        @media (max-width: 768px) {
+            iframe[src*="chatbase.co"] {
+                width: 90% !important;
+                right: 5% !important;
+                bottom: 80px !important;
+            }
         }
     </style>
 </head>
