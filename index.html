@@ -116,6 +116,12 @@
             color: var(--bg-dark);
             box-shadow: 0 0 15px var(--accent-glow);
         }
+        /* FORCE CHATBOT SIZE */
+        iframe#chatbase-bubble-window {
+            height: 500px !important; /* Adjust height here */
+            width: 350px !important;  /* Adjust width here */
+            max-height: 80vh !important; /* Prevents it from being too tall on mobile */
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
